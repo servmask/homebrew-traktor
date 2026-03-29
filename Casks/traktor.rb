@@ -1,13 +1,13 @@
 cask "traktor" do
-  version "1.7.0"
-  sha256 "96b9e066af6815076c2bc8d8245016e8c2eb3bbc41df6f3f18957e0ebe50b8df"
+  version "1.8.0"
+  sha256 "8f667439e463255c055ace40763d6e64b78bfa19936e16cd7700acfb4311f7c5"
 
-  url "https://github.com/servmask/Qtraktor/releases/download/v#{version}/Traktor-v#{version}.pkg"
+  url "https://github.com/servmask/Qtraktor/releases/download/v#\{version\}/Traktor-v#\{version\}.pkg"
   name "Traktor"
   desc "Extract WordPress .wpress backup files with CLI and MCP server"
   homepage "https://github.com/servmask/Qtraktor"
 
-  pkg "Traktor-v#{version}.pkg"
+  pkg "Traktor-v#\{version\}.pkg"
 
   caveats <<~EOS
     To register Traktor with your AI coding agents (Claude Code, Gemini CLI):
@@ -22,10 +22,10 @@ cask "traktor" do
   EOS
 
   uninstall pkgutil: "com.servmask.traktor",
-            delete:  [
-              "/Applications/Traktor.app",
-              "/usr/local/bin/traktor",
-            ]
+delete:  [
+  "/Applications/Traktor.app",
+  "/usr/local/bin/traktor",
+]
 
   zap trash: [
     "~/Library/Preferences/com.servmask.Traktor.plist",
