@@ -1,6 +1,6 @@
 cask "traktor" do
-  version "1.6.0"
-  sha256 :no_check
+  version "1.7.0"
+  sha256 "96b9e066af6815076c2bc8d8245016e8c2eb3bbc41df6f3f18957e0ebe50b8df"
 
   url "https://github.com/servmask/Qtraktor/releases/download/v#{version}/Traktor-v#{version}.pkg"
   name "Traktor"
@@ -8,11 +8,6 @@ cask "traktor" do
   homepage "https://github.com/servmask/Qtraktor"
 
   pkg "Traktor-v#{version}.pkg"
-
-  postflight do
-    ohai "To register Traktor with your AI coding agents, run:"
-    ohai "  traktor mcp register"
-  end
 
   caveats <<~EOS
     To register Traktor with your AI coding agents (Claude Code, Gemini CLI):
@@ -27,7 +22,10 @@ cask "traktor" do
   EOS
 
   uninstall pkgutil: "com.servmask.traktor",
-            delete:  "/usr/local/bin/traktor"
+            delete:  [
+              "/Applications/Traktor.app",
+              "/usr/local/bin/traktor",
+            ]
 
   zap trash: [
     "~/Library/Preferences/com.servmask.Traktor.plist",
