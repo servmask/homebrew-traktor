@@ -1,6 +1,6 @@
 cask "traktor" do
-  version "1.11.1"
-  sha256 "10a3e39b2f7c289cf6129def330ae53707e90ccd87ab74dce32ca61ffcc24bfc"
+  version "1.11.2"
+  sha256 "7314cae6f9fd49b4ef455948a7a96dac94f1d0cae4aa9ca9d7500ead481f3c9a"
 
   url "https://github.com/servmask/Qtraktor/releases/download/v#{version}/Traktor-v#{version}.pkg"
   name "Traktor"
